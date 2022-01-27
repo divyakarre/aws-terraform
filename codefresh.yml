@@ -1,0 +1,28 @@
+version: '1.0'
+stages:
+  - checkout
+  - prepare   
+  - deploy
+steps:
+  main_clone:
+    title: Cloning main repository...
+    stage: checkout
+    type: git-clone
+    repo: 'divyakarre/aws-terraform'
+    revision: main
+    git: github      
+  SetupAuth:
+    image: alpine:3.9
+    title: Setting up AWS cloud access and secret key
+    stage: prepare
+    commands:
+        - export AWS_ACCESS_KEY_ID=$ACCESS_KEY
+        - export AWS_SECRET_ACCESS_KEY=$SECRET_KEY
+        - export AWS_DEFAULT_region=us-west-2
+  DeployWithTerraform:
+    image: hashicorp/terraform:0.12.0
+    title: Deploying Terraform plan
+    stage: deploy
+    commands:
+      - terraform init
+      - terraform apply -auto-approve
