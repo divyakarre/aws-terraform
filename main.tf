@@ -28,7 +28,7 @@ module "aws-vpc" {
 module "aws-eks" {
     source = "./modules/eks"
     cluster_name = "eks-cluster-demo"
-    cluster_version = "1.17"
+    cluster_version = "1.20"
     eks_vpc_id = module.aws-vpc.vpc_id
     eks_subnets = module.aws-vpc.dev_public_subnets
     instance_types = ["t3.medium"]
