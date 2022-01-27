@@ -9,6 +9,14 @@ provider "aws" {
   #  profile = "default"
     region = "us-west-2"
 }
+terraform {
+  backend "s3"{
+  bucket = "terraform-state-eks"
+  region = "us-west-2" 
+    key="terraform.tfstate"
+  }
+}
+
 
 ######## availability zones list
 
