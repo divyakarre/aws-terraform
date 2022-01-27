@@ -5,8 +5,8 @@ terraform {
 #provider "http" {} 
 
 provider "aws" {
-    shared_credentials_file = "$HOME/.aws/credentials"
-    profile = "default"
+   # shared_credentials_file = "$HOME/.aws/credentials"
+  #  profile = "default"
     region = "us-west-2"
 }
 
