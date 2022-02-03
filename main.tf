@@ -33,7 +33,7 @@ module "aws-vpc" {
 
 #### EKS Module ####
 
-module "aws-eks" {
+/* module "aws-eks" {
     source = "./modules/eks"
     cluster_name = "eks-cluster-demo"
     cluster_version = "1.20"
@@ -42,7 +42,7 @@ module "aws-eks" {
     instance_types = ["t3.medium"]
     capacity_type = "ON_DEMAND"
     ec2_ssh_key = "infra-test"
-}
+} */
 
 
 
