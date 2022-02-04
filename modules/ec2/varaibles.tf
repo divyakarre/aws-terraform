@@ -18,6 +18,6 @@ variable instancetype {
 #}
 
 
-variable "subnet_id" {
+# variable "subnet_id" {
   
-}
+# }
