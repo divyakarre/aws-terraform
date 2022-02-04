@@ -1,10 +1,6 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
 
-  filter {
-    name   = "name"
-    values = ["ubuntu"]
-  }
 
   filter {
     name   = "virtualization-type"
@@ -15,7 +11,7 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "web" {
-  ami           = data.aws_ami.ubuntu.id
+  ami           = "ami-078278691222aee06"
   instance_type = "t3.micro"
 
   tags = {
