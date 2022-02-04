@@ -7,8 +7,8 @@ module "ec2_instances" {
 
   ami                    = var.ami
   instance_type          = var.instancetype
-  vpc_security_group_ids = [module.vpc.default_security_group_id]
-  subnet_id              = module.vpc.public_subnets[0]
+  #vpc_security_group_ids = var.vpc_security_group_ids #[module.vpc.default_security_group_id]
+  subnet_id              = var.subnet_id
 
   tags = {
     Terraform   = "true"

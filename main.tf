@@ -55,4 +55,6 @@ module "aws-vpc" {
 
   module ec2 {
     source = "./modules/ec2"
+    #vpc_security_group_ids = [module.vpc.default_security_group_id]
+    subnet_id = module.vpc.aws_subnet.dev-public-subnet[0].id
   }
