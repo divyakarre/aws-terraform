@@ -1,17 +1,24 @@
-module "ec2_instances" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "2.12.0"
+data "aws_ami" "ubuntu" {
+  most_recent = true
 
-  name           = var.vmname
-  instance_count = 1
+  filter {
+    name   = "name"
+    values = ["ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*"]
+  }
 
-  ami                    = var.ami
-  instance_type          = var.instancetype
-  #vpc_security_group_ids = var.vpc_security_group_ids #[module.vpc.default_security_group_id]
-  #subnet_id              = var.subnet_id
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+
+  owners = ["756217852389"] # Canonical
+}
+
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
 
   tags = {
-    Terraform   = "true"
-    Environment = "dev"
+    Name = "HelloWorld"
   }
 }
