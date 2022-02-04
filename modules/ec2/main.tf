@@ -1,9 +1,5 @@
-resource "aws_instance" "web" {
-  ami           = "ami-08d20da2261ebe2ec"
-  instance_type = "t3.micro"
-
-  tags = {
-    Name = "HelloWorld"
-  }
+resource "aws_instance" "example" {
+  ami           = "ami-2757f631"
+  instance_type = "t2.micro"
 }
 
