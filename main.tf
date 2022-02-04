@@ -47,12 +47,12 @@ module "aws-vpc" {
 
 #### s3 Module ####
  module s3 {
-  source = "./module/s3"
+  source = "./modules/s3"
   
  }
 
 #### ec2 module ####
 
   module ec2 {
-    source = "./module/ec2"
+    source = "./modules/ec2"
   }
