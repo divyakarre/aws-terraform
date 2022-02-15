@@ -29,5 +29,5 @@ steps:
       - terraform init
       
       #- terraform plan
-       - terraform destroy -auto-approve
+      - terraform destroy -auto-approve
       
