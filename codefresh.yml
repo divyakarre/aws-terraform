@@ -29,4 +29,5 @@ steps:
       - terraform init
       
       #- terraform plan
-      - terraform  approve -auto-approve
+       - terraform apply -auto-approve
+      
