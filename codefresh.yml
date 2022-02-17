@@ -31,3 +31,7 @@ steps:
       #- terraform plan
       - terraform destroy -auto-approve
       
+
+
+      
+
