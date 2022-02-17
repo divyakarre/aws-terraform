@@ -28,8 +28,8 @@ steps:
       - export AWS_SECRET_ACCESS_KEY=$SECRET_KEY
       - terraform init
       
-      #- terraform plan
-      - terraform destroy -auto-approve
+      - terraform plan
+      - terraform apply -auto-approve
       
 
 
